@@ -45,15 +45,20 @@
             y = new DataGridViewTextBoxColumn();
             chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             pictureBox1 = new PictureBox();
+            menuStrip1 = new MenuStrip();
+            масивиToolStripMenuItem = new ToolStripMenuItem();
+            одновимірніToolStripMenuItem = new ToolStripMenuItem();
+            двовимірніМасивиToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)chart1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(27, 22);
+            label1.Location = new Point(27, 43);
             label1.Name = "label1";
             label1.Size = new Size(26, 20);
             label1.TabIndex = 0;
@@ -62,7 +67,7 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(27, 64);
+            textBox1.Location = new Point(27, 85);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(57, 27);
             textBox1.TabIndex = 1;
@@ -72,7 +77,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(142, 22);
+            label2.Location = new Point(142, 43);
             label2.Name = "label2";
             label2.Size = new Size(25, 20);
             label2.TabIndex = 2;
@@ -81,7 +86,7 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(142, 64);
+            textBox2.Location = new Point(142, 85);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(57, 27);
             textBox2.TabIndex = 3;
@@ -90,7 +95,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(245, 22);
+            label3.Location = new Point(245, 43);
             label3.Name = "label3";
             label3.Size = new Size(17, 20);
             label3.TabIndex = 4;
@@ -98,7 +103,7 @@
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(245, 64);
+            textBox3.Location = new Point(245, 85);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(57, 27);
             textBox3.TabIndex = 5;
@@ -107,7 +112,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(352, 22);
+            label4.Location = new Point(352, 43);
             label4.Name = "label4";
             label4.Size = new Size(17, 20);
             label4.TabIndex = 6;
@@ -115,7 +120,7 @@
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(352, 64);
+            textBox4.Location = new Point(352, 85);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(57, 27);
             textBox4.TabIndex = 7;
@@ -123,7 +128,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(478, 62);
+            button1.Location = new Point(478, 83);
             button1.Name = "button1";
             button1.Size = new Size(103, 29);
             button1.TabIndex = 8;
@@ -188,6 +193,37 @@
             pictureBox1.TabIndex = 12;
             pictureBox1.TabStop = false;
             // 
+            // menuStrip1
+            // 
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { масивиToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(1079, 28);
+            menuStrip1.TabIndex = 13;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // масивиToolStripMenuItem
+            // 
+            масивиToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { одновимірніToolStripMenuItem, двовимірніМасивиToolStripMenuItem });
+            масивиToolStripMenuItem.Name = "масивиToolStripMenuItem";
+            масивиToolStripMenuItem.Size = new Size(77, 24);
+            масивиToolStripMenuItem.Text = "Масиви";
+            // 
+            // одновимірніToolStripMenuItem
+            // 
+            одновимірніToolStripMenuItem.Name = "одновимірніToolStripMenuItem";
+            одновимірніToolStripMenuItem.Size = new Size(239, 26);
+            одновимірніToolStripMenuItem.Text = "Одновимірні масиви";
+            одновимірніToolStripMenuItem.Click += одновимірніМасивиToolStripMenuItem_Click;
+            // 
+            // двовимірніМасивиToolStripMenuItem
+            // 
+            двовимірніМасивиToolStripMenuItem.Name = "двовимірніМасивиToolStripMenuItem";
+            двовимірніМасивиToolStripMenuItem.Size = new Size(239, 26);
+            двовимірніМасивиToolStripMenuItem.Text = "Двовимірні масиви";
+            двовимірніМасивиToolStripMenuItem.Click += двовимірнімасивиToolStripMenuItem_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -206,11 +242,15 @@
             Controls.Add(label2);
             Controls.Add(textBox1);
             Controls.Add(label1);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
             Name = "Form1";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)chart1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -232,5 +272,9 @@
         private DataGridViewTextBoxColumn y;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private PictureBox pictureBox1;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem масивиToolStripMenuItem;
+        private ToolStripMenuItem одновимірніToolStripMenuItem;
+        private ToolStripMenuItem двовимірніМасивиToolStripMenuItem;
     }
 }

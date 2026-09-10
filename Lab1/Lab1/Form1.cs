@@ -30,6 +30,19 @@ namespace Lab1
                 chart1.Series[0].Points.AddXY(tabul.xy[i, 0], tabul.xy[i, 1]);
             }
         }
+        private void Ó‰ÌÓ‚ËÏ≥Ì≥Ã‡ÒË‚ËToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 f = new Form2();
+            f.Show();
+            this.Hide();
+        }
+        private void ‰‚Ó‚ËÏ≥Ì≥Ï‡ÒË‚ËToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form3 f = new Form3();
+            f.Show();
+            this.Hide();
+        }
+
         private void label1_Click(object sender, EventArgs e) { }
         private void textBox1_TextChanged(object sender, EventArgs e) { }
         private void label2_Click(object sender, EventArgs e) { }
