@@ -7,21 +7,21 @@ namespace Lab1.Class_lab1
     internal class Arrays
     {
         public bool error = false;//Поле для перевірки на помилку
-        int[] a;//закритий масив
+        double [] a;//закритий масив
         //закрита довжина масиву
-        int lenght = 5;
+        int length = 20;
         //властивість розмірність масиву
-        public int Lenght
+        public int Length
         {
-            get { return lenght; }
-            set { lenght = value; }
+            get { return length; }
+            set { length = value; }
         }
         //індексатор
-        public int this[int i]
+        public double this[int i]
         {
             get
             {
-                if (0 <= i && i < lenght)
+                if (0 <= i && i < length)
                     return a[i];
                 else
                 {
@@ -31,7 +31,7 @@ namespace Lab1.Class_lab1
             }
             set
             {
-                if (0 <= i && i < lenght && value >= -100 && value <= 100)
+                if (0 <= i && i < length && value >= 100 && value <= 200)
                     a[i] = value;
                 else
                     error = true;
@@ -40,29 +40,29 @@ namespace Lab1.Class_lab1
         //Конструктори
         public Arrays()
         {
-            a = new int[lenght];
+            a = new double[length];
         }
-        public Arrays(int[] mas)
+        public Arrays(double[] mas)
         {
             a = mas;
         }
         public Arrays(int size)
         {
-            Lenght = size;
-            a = new int[lenght];
+            Length = size;
+            a = new double[Length];
             Random rand = new Random();
-            for (int i = 0; i < lenght; i++)
+            for (int i = 0; i < Length; i++)
             {
-                this[i] = rand.Next(-50, 50);
+                this[i] =Math.Round( 100.0 + rand.NextDouble() * (200.0 - 100.0),2);
             }
         }
         //Властивість для обрахунку сум
-        public (int, int, int) Sum
+        public (double, double, double) Sum
         {
             get
             {
-                int S = 0, S_plus = 0, S_minus = 0;
-                foreach (int i in a)
+                double S = 0, S_plus = 0, S_minus = 0;
+                foreach (double i in a)
                 {
                     S += i;
                     if (i > 0) S_plus += i;
@@ -70,6 +70,39 @@ namespace Lab1.Class_lab1
                 }
                 return (S, S_plus, S_minus);
             }
+        }
+        //Властивість для обрахунку суми непарних елементів
+        public double OddSum
+        {
+            get
+            {
+                double S_odd = 0;
+                for (int i = 1; i < length; i += 2)
+                {
+                    S_odd += a[i];
+                }
+                return S_odd;
+            }
+        }
+        // Вивід одного елемента за індексом з перевіркою
+        public string PrintElement(int i)
+        {
+            if (0 <= i && i < length)
+            {
+                error = false;
+                return a[i].ToString("F2");
+            }
+            else
+            {
+                error = true;
+                return "Помилка: вихід за межі масиву!";
+            }
+        }
+        // Вивід усього масиву в рядок
+        public string PrintAll()
+        {
+            if (a == null || length == 0) return "Масив порожній";
+            return string.Join(" ", a);
         }
     }
 }

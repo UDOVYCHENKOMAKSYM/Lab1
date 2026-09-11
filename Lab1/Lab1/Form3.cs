@@ -40,22 +40,22 @@ namespace Lab1
                 for(int i = 0; i < m; i++)
                 {
                     dvage = new DataGridViewTextBoxColumn();
-                    dvage.Width = 40;
+                    dvage.Width = 50;
                     dataGridView1.Columns.Add(dvage);
                 }
                 dataGridView1.Rows.Clear();
-                dataGridView1.RowCount=twoDimArray.X_lenght;
-                dataGridView1.ColumnCount = twoDimArray.Y_lenght;
-                for(int i = 0; i < twoDimArray.X_lenght; i++)
+                dataGridView1.RowCount=twoDimArray.X_length;
+                dataGridView1.ColumnCount = twoDimArray.Y_length;
+                for(int i = 0; i < twoDimArray.X_length; i++)
                 {
-                    for (int j = 0; j < twoDimArray.Y_lenght; j++)
+                    for (int j = 0; j < twoDimArray.Y_length; j++)
                     {
                         dataGridView1.Rows[i].Cells[j].Value = twoDimArray[i, j].ToString();
                     }
                 }
                 var rezult = twoDimArray.Sum_Dob;
-                label3.Text = rezult.Item1.ToString();
-                label4.Text = rezult.Item2.ToString();
+                label3.Text = rezult.Item1.ToString("F2");
+                label4.Text = rezult.Item2.ToString("F2");
 
             }
             catch(Exception ex)

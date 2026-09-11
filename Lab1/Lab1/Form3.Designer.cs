@@ -74,7 +74,7 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(54, 27);
             textBox1.TabIndex = 3;
-            textBox1.Text = "5";
+            textBox1.Text = "7";
             textBox1.TextChanged += textBox1_TextChanged;
             // 
             // label2
@@ -92,7 +92,7 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(54, 27);
             textBox2.TabIndex = 5;
-            textBox2.Text = "5";
+            textBox2.Text = "7";
             // 
             // button2
             // 
@@ -126,7 +126,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(868, 581);
+            ClientSize = new Size(1063, 586);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(button2);

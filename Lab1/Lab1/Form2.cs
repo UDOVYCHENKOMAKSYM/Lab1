@@ -30,14 +30,15 @@ namespace Lab1
             {
                 int n= Convert.ToInt32(textBox1.Text);
                 Arrays a = new Arrays(n);
-                for (int i = 0; i < a.Lenght; i++)
+                for (int i = 0; i < a.Length; i++)
                 {
                     dataGridView1.Rows.Add(a[i].ToString());
                 }
                 var sum = a.Sum;
-                label2.Text = sum.Item1.ToString();
-                label3.Text = sum.Item2.ToString();
-                label4.Text = sum.Item3.ToString();
+                label2.Text = sum.Item1.ToString("F2");
+                label3.Text = sum.Item2.ToString("F2");
+                label4.Text = sum.Item3.ToString("F2");
+                label5.Text = a.OddSum.ToString("F2");
             }
             catch (Exception ex)
             {
